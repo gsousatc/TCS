@@ -1,7 +1,7 @@
 #!/usr/bin/ python
 # -*- coding:ISO-8859-1 -*-
 
-# Copyright (c) 2010 GC, RL. All rights reserved.
+# Copyright (c) 2010. All rights reserved.
 # This program or module is free software: you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as published
 # by the Free Software Foundation, either version 2 of the License, or
@@ -11,10 +11,13 @@
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
 # the GNU General Public License for more details.
 
-__author__="Gon�alo Carvalhal <gsousatc@itn.pt>"
-__author__="                  <        @itn.pt>"
-__version__="0.1"
+__author__=(u'Gonçalo Carvalhal <gsousatc@itn.pt>', u'Raul Luis <raulfluis@itn.pt>')
+__version__='0.1'
 __date__="Nov 10 2010"
+
+
+#TODO: implement error handlers
+#TODO: implement unit-testing (and take care of doctest) 
 
 
 from mpl_toolkits.mplot3d import axes3d, Axes3D
@@ -30,15 +33,15 @@ y0=0
 z0=0
 origin=(x0, y0, z0)
 
-# system definition (source)
+# system definition (source domain)
 xs=0
 ys=0
 zs=0
 source=(xs, ys, zs)
 
+# system definition (particles)
 nps=2
 e_cutoff=10
-
 
 
 # TODO: read mu from file
@@ -136,3 +139,12 @@ def path(T = 100, period = 1):
 for n in range(1, nps+1):
     print n, nps
     path()
+
+
+xs_pe=8
+xs_c=2
+xs_T=10
+
+
+p_pe=xs_pe/xs_T
+p_c=xs_c/xs_T
